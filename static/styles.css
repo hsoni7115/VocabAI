@@ -494,8 +494,8 @@ body {
 
 /* Ensure you have this new rule for your logo image */
 .app-logo {
-    max-width: 180px; 
-    min-width: 100px; /* Make logo smaller for beside text */
+    max-width: 50px; 
+    min-width: 50px; /* Make logo smaller for beside text */
     height: auto;
     display: block; /* Important for flex item */
     margin: 0; /* Remove auto margins when inside flex */
