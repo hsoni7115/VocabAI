@@ -394,7 +394,7 @@
 //         }
 class VocabularyApp {
     constructor() {
-        this.apiBase = 'http://localhost:5000/api';
+        this.apiBase = '/api';
         this.recognition = null;
         this.synth = window.speechSynthesis;
         this.searchHistory = this.loadHistory();
