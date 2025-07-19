@@ -1182,51 +1182,72 @@ body.dark-mode .history-section h3 .fas {
 }
 
 /* Responsive Adjustments */
+
 @media (max-width: 768px) {
     .container {
         padding: var(--spacing-md);
         margin: var(--spacing-md) auto;
     }
 
-    .header h1 {
-        font-size: 2.2rem;
-        gap: var(--spacing-sm);
-    }
-    .header p {
-        font-size: var(--font-size-md);
+    /* Adjust header padding to ensure space, but now the button will move */
+    .header {
+        padding-top: var(--spacing-md); /* Reset or keep moderate padding, as button moves */
+        margin-bottom: var(--spacing-lg); /* Keep good space below header content */
+        display: flex; /* Make header a flex container */
+        flex-direction: column; /* Stack its children (logo/title and p tag) vertically */
+        align-items: center; /* Center children horizontally */
     }
 
+    /* Re-position the theme toggle button for mobile */
     .theme-toggle-btn {
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        position: static; /* Remove absolute positioning */
+        margin-top: var(--spacing-md); /* Add margin to push it below the heading */
+        margin-bottom: var(--spacing-lg); /* Space below the button */
+        width: 100%; /* Make it full width if desired */
+        max-width: 200px; /* Or a fixed max-width to not stretch too wide */
+        height: 50px; /* Adjust height */
+        border-radius: var(--border-radius-md); /* Make it more rectangular like other buttons */
+        font-size: var(--font-size-md); /* Adjust font size */
     }
 
+    /* Adjust the h1 containing the logo and app title */
+    .header h1 {
+        flex-direction: row; /* Keep logo and text side-by-side in h1 */
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm); /* Keep space between h1 and p tag */
+        text-align: center; /* Ensure contents are centered within h1 */
+    }
+
+    .header p {
+        text-align: center; /* Ensure this line is centered */
+        margin-bottom: var(--spacing-md); /* Space below "Discover words..." line */
+    }
+
+
+    /* Ensure search-container elements stack vertically */
     .search-container {
         flex-direction: column;
         gap: var(--spacing-md);
     }
-    .search-input, .btn {
-        width: 100%; /* Full width for inputs and buttons */
-        padding: 12px 20px; /* Slightly less padding */
-        font-size: var(--font-size-md);
+    .search-input {
+        width: 100%; /* Input takes full width */
     }
     .voice-btn {
         width: 50px;
         height: 50px;
-        font-size: 1.3rem;
-        align-self: flex-end; /* Align to the right if in a column */
+        align-self: center; /* Center the voice button if it's not full width */
+        margin-bottom: var(--spacing-sm); /* Space below mic if it's not full width button */
     }
-    .search-container .btn-primary, .search-container .btn-secondary {
-        width: 100%;
+    .search-container .btn-primary,
+    .search-container .btn-secondary {
+        width: 100%; /* Make search button full width */
+        padding: 12px 20px;
     }
 
-
+    /* Ensure context-input elements stack vertically */
     .context-input {
         flex-direction: column;
-        align-items: flex-start; /* Align labels to start */
+        align-items: flex-start; /* Align label/input to start */
         gap: var(--spacing-md);
     }
     .context-input input, .context-input button {
@@ -1280,7 +1301,10 @@ body.dark-mode .history-section h3 .fas {
     .header p {
         font-size: var(--font-size-base);
     }
-
+    .theme-toggle-btn {
+        font-size: var(--font-size-sm);
+        padding: 10px 15px; /* Adjust padding if height/width is set */
+    }
     .voice-btn {
         width: 45px;
         height: 45px;
